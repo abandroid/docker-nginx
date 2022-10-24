@@ -1,4 +1,4 @@
-FROM nginx:1.21.3
+FROM nginx:1.23.2
 
 RUN apt-get update && apt-get install -y vim nano python-certbot-nginx --fix-missing
 
