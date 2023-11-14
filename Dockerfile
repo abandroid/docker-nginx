@@ -1,11 +1,9 @@
-FROM nginx:1.25.3
+FROM nginx:1.25.3-alpine3.18
 
-RUN apt-get update && apt-get install -y vim python3-certbot-nginx --fix-missing
+RUN apk add --no-cache certbot certbot-nginx
 
 ADD nginx.conf /etc/nginx/nginx.conf
 ADD ssl /etc/nginx/ssl
-
-RUN usermod -u 1000 www-data
 
 CMD ["nginx"]
 
