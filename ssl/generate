@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 openssl genrsa -des3 -out symfony.key -passout pass:symfony 2048
 openssl req -x509 -new -nodes -key symfony.key -sha256 -days 20000 -out symfony.pem -passin pass:symfony -subj "/C=US/CN=localhost"
